@@ -63,3 +63,25 @@ def median(converted):
         median_value = sorted_list[value]
     return median_value
 print("The median of the numbers is: ",median(converted))
+
+#calculating range
+def range(converted):
+    maximum = (max(converted))
+    minimum = (min(converted))
+    range_value = maximum - minimum
+    return range_value
+print("The range of the numbers are:", range(converted))
+
+#calculating mode
+def mode(converted):
+    dict = {}
+    for value in converted:
+        if value in dict:
+            dict[value] += 1
+        else:
+            dict[value] = 1
+    frequency = max(dict[value])
+    return frequency
+
+print("The mode of the data is: ", mode(converted))
+
