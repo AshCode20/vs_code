@@ -74,14 +74,21 @@ print("The range of the numbers are:", range(converted))
 
 #calculating mode
 def mode(converted):
-    dict = {}
+    frequency = {}
     for value in converted:
-        if value in dict:
-            dict[value] += 1
+        if value in frequency:
+            print(value)
+            frequency[value] += 1
         else:
-            dict[value] = 1
-    frequency = max(dict[value])
-    return frequency
+            frequency[value] = 1
+    max_frequency = max(frequency.values())
+    modes = []
+    for key, count in frequency.items():
+        if count == max_frequency:
+            modes.append(key)
+    if max_frequency == 1:
+        return "No mode (all value occur once)"
+    return modes
 
 print("The mode of the data is: ", mode(converted))
 
