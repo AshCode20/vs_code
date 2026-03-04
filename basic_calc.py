@@ -48,6 +48,7 @@ def std_dev(converted, variance):
     standard_deviation = math.sqrt(variance)
     return standard_deviation
 print("The standard deviation of the numbers is: " ,std_dev(converted, variance))
+standard_deviation_value = std_dev(converted, variance)
 
 #calculate median
 def median(converted):
@@ -91,4 +92,20 @@ def mode(converted):
     return modes
 
 print("The mode of the data is: ", mode(converted))
+
+# calculating z-score
+def z_score(converted, standard_deviation_value,mean_value ):
+    if standard_deviation_value == 0:
+        message = "The numbers are all the same! There are no deviations in the data."
+        return message
+    else:
+        z_score_list = []
+        for value in converted:
+            zscore = (value - mean_value) / standard_deviation_value
+            z_score_list.append(zscore)
+    return z_score_list
+
+print("The z scores for the given data are:",z_score(converted, standard_deviation_value,mean_value ) )
+
+        
 
