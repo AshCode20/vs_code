@@ -21,7 +21,7 @@ def baseSubs_nucl(sequence):
     new_base = input("enter the new base")
     sequence[position - 1] = new_base.upper()
     return sequence
-print(baseSubs_nucl(sequence))
+#print(baseSubs_nucl(sequence))
 
 #insertion
 def insert_nucl(sequence):
@@ -30,7 +30,7 @@ def insert_nucl(sequence):
     new_base = input("enter the new base")
     sequence.insert(position, new_base.upper())
     return sequence
-print(insert_nucl(sequence))
+#print(insert_nucl(sequence))
 
 #deletion
 def deletion_nucl(sequence):
@@ -38,7 +38,7 @@ def deletion_nucl(sequence):
     position = int(input ("enter the position"))
     new_sequence = sequence[ : position] + sequence[position+1 : ]
     return new_sequence
-print(deletion_nucl(sequence))
+#print(deletion_nucl(sequence))
 
 def complement_nucl(sequence):
     print("Finding complements:")
@@ -54,12 +54,13 @@ def complement_nucl(sequence):
             complement_sequence = complement_sequence + 'G'
     return complement_sequence
 print(complement_nucl(sequence))
+complement_nucl_variable = complement_nucl(sequence)
 
-def reverse_complement(sequence):
+def reverse_complement(sequence, complement_nucl_variable):
     print("Reverse complement:")
     reverse = sequence[ : : -1]
     return reverse
-print(reverse_complement(complement_nucl(sequence)))
+print(reverse_complement(sequence, complement_nucl_variable ))
 
 
 
